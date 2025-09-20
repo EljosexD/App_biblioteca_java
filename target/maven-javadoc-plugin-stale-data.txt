@@ -1,0 +1,49 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+--no-fonts
+-classpath
+'C:/Users/eljot/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE270/AbsoluteLayout-RELEASE270.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+23
+-sourcepath
+'C:/Users/eljot/Documents/NetBeansProjects/Biblioteca_usc/src/main/java;C:/Users/eljot/Documents/NetBeansProjects/Biblioteca_usc/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/eljot/Documents/NetBeansProjects/Biblioteca_usc/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Biblioteca_usc 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Biblioteca_usc 1.0-SNAPSHOT API'
+com.igu
+com.logic
+C:\Users\eljot\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE270\AbsoluteLayout-RELEASE270.jar = 1758242322623
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\src\main\java = 1758323772107
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\generated-sources\annotations = 1758328593885
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\allclasses-index.html = 1758328602613
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\allpackages-index.html = 1758328602619
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\element-list = 1758328602328
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\help-doc.html = 1758328602822
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\index-all.html = 1758328602782
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\index.html = 1758328602601
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\member-search-index.js = 1758328602749
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\module-search-index.js = 1758328602622
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\overview-summary.html = 1758328602811
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\overview-tree.html = 1758328602596
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\package-search-index.js = 1758328602625
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\search.html = 1758328602794
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\serialized-form.html = 1758328602484
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\tag-search-index.js = 1758328602750
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\type-search-index.js = 1758328602747

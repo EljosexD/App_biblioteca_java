@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.logic","c":"Biblioteca_usc","l":"Biblioteca_usc()","u":"%3Cinit%3E()"},{"p":"com.igu","c":"Home","l":"Home()","u":"%3Cinit%3E()"},{"p":"com.logic","c":"Biblioteca_usc","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();
