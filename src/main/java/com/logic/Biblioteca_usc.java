@@ -5,6 +5,7 @@
 package com.logic;
 
 import com.igu.Home;
+import com.persistence.Books;
 
 /**
  *
@@ -17,5 +18,7 @@ public class Biblioteca_usc {
         home.setVisible(true);
         home.setLocationRelativeTo(null);
         System.out.println("Hello World!");
+        Books books = new Books();
+        books.CreateFile();
     }
 }
