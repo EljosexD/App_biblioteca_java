@@ -8,6 +8,7 @@ import com.logic.Book;
 import com.persistence.Books;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,8 +17,8 @@ import java.util.ArrayList;
 public class Home extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Home.class.getName());
-    private ArrayList<ArrayList<Book>> bibliotec = new ArrayList<ArrayList<Book>>();
-    private Books bookpersistence = new Books();
+    public ArrayList<Book> bibliotec = new ArrayList<Book>();
+    public Books bookpersistence = new Books();
     /**
      * Creates new form Home
      */
@@ -210,7 +211,9 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        bibliotec.add(bookpersistence.downloadProductFile());
+   
+        bibliotec = bookpersistence.downloadProductFile();
+        JOptionPane.showMessageDialog(null, bibliotec.get(1).csvDescriptionProduct());
         
     }//GEN-LAST:event_jButton7ActionPerformed
 

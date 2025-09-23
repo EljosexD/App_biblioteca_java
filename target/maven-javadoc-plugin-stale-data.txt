@@ -29,21 +29,22 @@
 'Biblioteca_usc 1.0-SNAPSHOT API'
 com.igu
 com.logic
+com.persistence
 C:\Users\eljot\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE270\AbsoluteLayout-RELEASE270.jar = 1758242322623
 C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\src\main\java = 1758323772107
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\generated-sources\annotations = 1758328593885
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\allclasses-index.html = 1758328602613
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\allpackages-index.html = 1758328602619
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\element-list = 1758328602328
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\help-doc.html = 1758328602822
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\index-all.html = 1758328602782
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\index.html = 1758328602601
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\member-search-index.js = 1758328602749
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\module-search-index.js = 1758328602622
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\overview-summary.html = 1758328602811
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\overview-tree.html = 1758328602596
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\package-search-index.js = 1758328602625
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\search.html = 1758328602794
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\serialized-form.html = 1758328602484
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\tag-search-index.js = 1758328602750
-C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\type-search-index.js = 1758328602747
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\generated-sources\annotations = 1758643052257
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\allclasses-index.html = 1758643061518
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\allpackages-index.html = 1758643061524
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\element-list = 1758643061318
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\help-doc.html = 1758643061569
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\index-all.html = 1758643061555
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\index.html = 1758643061499
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\member-search-index.js = 1758643061537
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\module-search-index.js = 1758643061528
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\overview-summary.html = 1758643061564
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\overview-tree.html = 1758643061494
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\package-search-index.js = 1758643061531
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\search.html = 1758643061560
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\serialized-form.html = 1758643061412
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\tag-search-index.js = 1758643061539
+C:\Users\eljot\Documents\NetBeansProjects\Biblioteca_usc\target\reports\apidocs\type-search-index.js = 1758643061534

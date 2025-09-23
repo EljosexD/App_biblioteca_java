@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.logic","l":"Biblioteca_usc"},{"p":"com.igu","l":"Home"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.logic","l":"Biblioteca_usc"},{"p":"com.logic","l":"Book"},{"p":"com.persistence","l":"Books"},{"p":"com.logic","l":"DigitalBook"},{"p":"com.igu","l":"Home"},{"p":"com.igu","l":"LoadFileFrame"},{"p":"com.logic","l":"PhysicalBook"}];updateSearchResults();

@@ -9,9 +9,6 @@ public abstract class Book {
     boolean disposability;
     String type;
 
-    public Book(int id, String name, String authorname, String year, String synopsis, String disposability, boolean type) {
-    }
-
     public Book(int id, String name, String authorname, String year, String synopsis, boolean disposability, String type) {
         this.id = id;
         this.name = name;
@@ -79,5 +76,6 @@ public abstract class Book {
     }
 
     public abstract String csvDescriptionProduct();
+    public abstract void descripcionPrueba();
 
 }

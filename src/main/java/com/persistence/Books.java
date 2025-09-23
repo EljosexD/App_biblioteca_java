@@ -48,16 +48,17 @@ public class Books {
                 String name = datos[1];
                 String authorname = datos[2];
                 String year = datos[3];
-                String synopsis = datos[4];
-                boolean disposability = Boolean.parseBoolean(datos[5]);
-                String type = datos[6];
+                String type = datos[4];
+                String synopsis = datos[5];
+                boolean disposability = Boolean.parseBoolean(datos[6]);
+
                 Book BookFiles;
                 switch (type) {
                     case "physical":
-                        BookFiles = new PhysicalBook(id, name, authorname, year,type,synopsis,disposability);
+                        BookFiles = new PhysicalBook(id, name, authorname, year,synopsis,disposability,type);
                         break;
                     case "digital":
-                        BookFiles = new DigitalBook(id, name, authorname, year,type,synopsis,disposability);
+                        BookFiles = new DigitalBook(id, name, authorname, year,synopsis,disposability,type);
                         break;
                     default:
                         throw new IllegalArgumentException("Tipo desconocido: " + type);
