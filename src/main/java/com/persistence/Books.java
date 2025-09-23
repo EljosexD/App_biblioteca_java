@@ -1,10 +1,11 @@
 package com.persistence;
 
 import com.logic.Book;
+import com.logic.DigitalBook;
+import com.logic.PhysicalBook;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Books {
@@ -13,7 +14,7 @@ public class Books {
         try {
             if (this.fileVariable.createNewFile()){
                 FileWriter writer = new FileWriter(fileVariable,true);
-                writer.write("Id,Name,authorname,year,Type,synopsis,disposability\n");
+                writer.write("Id,Name,AuthorName,Year,Synopsis,Disposability,Type\n");
                 writer.close();
                 System.out.println("Create your databases");
             }else {
@@ -23,10 +24,10 @@ public class Books {
             e.printStackTrace(System.out);
         }
     }
-    public void uploadWriteFile(List<Book> uploadBook){
+    public void uploadWriteFile(ArrayList<Book> uploadBook){
         try {
             FileWriter writer = new FileWriter(fileVariable, false);
-            writer.write("Id,Name,Price,Amount,Type,SpecialAttribute\n");
+            writer.write("Id,Name,authorname,year,Type,synopsis,disposability\n");
             for (Book p : uploadBook) {
                 writer.write(p.csvDescriptionProduct() + "\n");
             }
@@ -34,5 +35,38 @@ public class Books {
         } catch (IOException e) {
             e.printStackTrace(System.out);
         }
+    }
+    public ArrayList<Book> downloadProductFile() {
+        ArrayList<Book> bookslist = new ArrayList<>();
+        try {
+            FileReader read = new FileReader(fileVariable);
+            BufferedReader readReader = new BufferedReader(read);
+            String linea = readReader.readLine(); // Esto es importante
+            while ((linea = readReader.readLine()) != null) {
+                String[] datos = linea.split(",");
+                int id = Integer.parseInt(datos[0]);
+                String name = datos[1];
+                String authorname = datos[2];
+                String year = datos[3];
+                String synopsis = datos[4];
+                boolean disposability = Boolean.parseBoolean(datos[5]);
+                String type = datos[6];
+                Book BookFiles;
+                switch (type) {
+                    case "physical":
+                        BookFiles = new PhysicalBook(id, name, authorname, year,type,synopsis,disposability);
+                        break;
+                    case "digital":
+                        BookFiles = new DigitalBook(id, name, authorname, year,type,synopsis,disposability);
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Tipo desconocido: " + type);
+                }
+                bookslist.add(BookFiles);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bookslist;
     }
 }

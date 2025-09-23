@@ -7,6 +7,9 @@ package com.logic;
 import com.igu.Home;
 import com.persistence.Books;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author eljot
@@ -14,6 +17,9 @@ import com.persistence.Books;
 public class Biblioteca_usc {
 
     public static void main(String[] args) {
+        Books persitenceBook = new Books();
+        List<Book> listbook = new ArrayList<>();
+
         Home home = new Home();
         home.setVisible(true);
         home.setLocationRelativeTo(null);

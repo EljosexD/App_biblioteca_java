@@ -4,6 +4,11 @@
  */
 package com.igu;
 
+import com.logic.Book;
+import com.persistence.Books;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author eljot
@@ -11,7 +16,8 @@ package com.igu;
 public class Home extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Home.class.getName());
-
+    private ArrayList<ArrayList<Book>> bibliotec = new ArrayList<ArrayList<Book>>();
+    private Books bookpersistence = new Books();
     /**
      * Creates new form Home
      */
@@ -88,10 +94,20 @@ public class Home extends javax.swing.JFrame {
         jButton4.setText("List Books");
 
         jButton5.setText("Save File");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Borrow Book");
 
         jButton7.setText("Load File");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Return Book");
 
@@ -129,18 +145,15 @@ public class Home extends javax.swing.JFrame {
             .addGroup(options_backgroundLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, options_backgroundLayout.createSequentialGroup()
-                        .addComponent(title)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, options_backgroundLayout.createSequentialGroup()
+                    .addComponent(title)
+                    .addGroup(options_backgroundLayout.createSequentialGroup()
                         .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
                             .addComponent(jButton5))
                         .addGap(18, 18, 18)
                         .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton8)
-                            .addComponent(jButton7))
-                        .addContainerGap(19, Short.MAX_VALUE))
+                            .addComponent(jButton7)))
                     .addGroup(options_backgroundLayout.createSequentialGroup()
                         .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
@@ -148,8 +161,8 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton4)
-                            .addComponent(jButton2))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jButton2))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         background.add(options_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1000, 100));
@@ -194,6 +207,17 @@ public class Home extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        bibliotec.add(bookpersistence.downloadProductFile());
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jButton5ActionPerformed
 
 
 
