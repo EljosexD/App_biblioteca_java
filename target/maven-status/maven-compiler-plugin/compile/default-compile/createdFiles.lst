@@ -1,11 +1,10 @@
 com\logic\DigitalBook.class
 com\igu\Home$1.class
-com\igu\LoadFileFrame.class
+com\persistence\Books.class
+com\igu\Home$3.class
 com\logic\Book.class
 com\igu\Home.class
 com\igu\Home$2.class
-com\logic\PhysicalBook.class
-com\persistence\Books.class
-com\igu\Home$3.class
 com\logic\Biblioteca_usc.class
 com\igu\Home$4.class
+com\logic\PhysicalBook.class

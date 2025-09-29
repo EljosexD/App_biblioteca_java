@@ -5,9 +5,11 @@
 package com.igu;
 
 import com.logic.Book;
+import com.logic.DigitalBook;
+import com.logic.PhysicalBook;
 import com.persistence.Books;
 
-import java.util.ArrayList;
+import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,13 +19,26 @@ import javax.swing.JOptionPane;
 public class Home extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Home.class.getName());
-    public ArrayList<Book> bibliotec = new ArrayList<Book>();
-    public Books bookpersistence = new Books();
+    // controlador y modelo para gestionar libros (separación lógica/vista)
+    private Bookcontroller controller;
+    private BookTableModel tableModel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableBooks;
     /**
      * Creates new form Home
      */
     public Home() {
         initComponents();
+        // inicializar controller y tabla
+        this.controller = new Bookcontroller(new Books());
+    this.tableModel = new BookTableModel();
+    // asociar controller al modelo para que las ediciones se propaguen
+    this.tableModel.setController(this.controller);
+    this.jTableBooks = new javax.swing.JTable(this.tableModel);
+        this.jScrollPane1 = new javax.swing.JScrollPane(this.jTableBooks);
+        // reemplazamos temporalmente el layout del panel trasparente para añadir la tabla
+        this.traspareted_background.setLayout(new BorderLayout());
+        this.traspareted_background.add(this.jScrollPane1, BorderLayout.CENTER);
     }
 
     /**
@@ -202,27 +217,76 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // Añadir libro mediante diálogos simples (id se asigna automáticamente)
+        try {
+            String name = JOptionPane.showInputDialog(this, "Book name:");
+            if (name == null || name.trim().isEmpty()) return;
+            String author = JOptionPane.showInputDialog(this, "Author name:");
+            if (author == null) author = "";
+            String year = JOptionPane.showInputDialog(this, "Year:");
+            if (year == null) year = "";
+            String synopsis = JOptionPane.showInputDialog(this, "Synopsis:");
+            if (synopsis == null) synopsis = "";
+            String[] types = new String[]{"physical", "digital"};
+            Object sel = JOptionPane.showInputDialog(this, "Type:", "Select type", JOptionPane.QUESTION_MESSAGE, null, types, types[0]);
+            if (sel == null) return;
+            String type = sel.toString();
+            int dispos = JOptionPane.showConfirmDialog(this, "Is the book available?", "Availability", JOptionPane.YES_NO_OPTION);
+            boolean available = (dispos == JOptionPane.YES_OPTION);
+
+            Book b;
+            if ("physical".equalsIgnoreCase(type)) {
+                b = new PhysicalBook(0, name, author, year, synopsis, available, "physical");
+            } else {
+                b = new DigitalBook(0, name, author, year, synopsis, available, "digital");
+            }
+            controller.add(b);
+            tableModel.setData(controller.list());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error adding book: " + ex.getMessage());
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Eliminar el libro seleccionado en la tabla
+        int row = jTableBooks.getSelectedRow();
+        if (row < 0) {
+            JOptionPane.showMessageDialog(this, "Please select a book to delete.");
+            return;
+        }
+        Book b = tableModel.getRow(row);
+        int confirm = JOptionPane.showConfirmDialog(this, "Delete book: " + b.getName() + "?", "Confirm", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            controller.removeById(b.getId());
+            tableModel.setData(controller.list());
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-   
-        bibliotec = bookpersistence.downloadProductFile();
-        JOptionPane.showMessageDialog(null, bibliotec.get(1).csvDescriptionProduct());
-        
+        // Cargar desde persistencia y refrescar la tabla
+        try {
+            controller.load();
+            tableModel.setData(controller.list());
+            if (!controller.list().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Loaded " + controller.list().size() + " books. First: " + controller.list().get(0).csvDescriptionProduct());
+            } else {
+                JOptionPane.showMessageDialog(this, "No books found in storage.");
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error loading books: " + ex.getMessage());
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        // Guardar la lista en el archivo CSV
+        try {
+            controller.save();
+            JOptionPane.showMessageDialog(this, "Saved " + controller.list().size() + " books to file.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error saving books: " + ex.getMessage());
+        }
 
     }//GEN-LAST:event_jButton5ActionPerformed
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Buho;
