@@ -6,6 +6,7 @@ package com.logic;
 
 import com.igu.Home;
 import com.persistence.Books;
+import com.persistence.BooksLoan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +19,21 @@ public class Biblioteca_usc {
 
     public static void main(String[] args) {
         Books persitenceBook = new Books();
+        BooksLoan persitenceBookloan = new BooksLoan();
+        List<Book> listbookLoan = new ArrayList<>();
         List<Book> listbook = new ArrayList<>();
         persitenceBook.CreateFile();
+        persitenceBookloan.CreateFile();
         System.out.println("xd");
         for (Book p : listbook){
             p.descripcionPrueba();
         }
        listbook = persitenceBook.downloadProductFile();
+        listbookLoan = persitenceBookloan.downloadProductFile();
         for (Book p : listbook){
+            p.descripcionPrueba();
+        }
+        for (Book p : listbookLoan){
             p.descripcionPrueba();
         }
         System.out.println("sou sou");

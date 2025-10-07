@@ -1,0 +1,11 @@
+Id,Name,authorname,year,Type,synopsis,disposability
+1,El secreto del viento,Carlos Pérez,1998,physical,Una historia de misterio en un pequeño pueblo,false
+2,Código del mañana,Ana Torres,2015,digital,Un thriller tecnológico sobre inteligencia artificial,false
+3,Sombras eternas,Juan Ramírez,2003,physical,Relato de fantasía oscura con héroes y villanos,true
+4,La melodía perdida,Lucía Gómez,2021,digital,Novela romántica con giros inesperados,true
+5,Camino a las estrellas,María Fernández,1987,physical,Ciencia ficción clásica de viajes espaciales,true
+6,El guardián del tiempo,Sergio López,2010,digital,Aventura donde un reloj controla el destino,true
+7,Reflejos rotos,Beatriz Sánchez,2005,physical,Drama psicológico ambientado en la ciudad,true
+8,Horizontes de fuego,Pedro Morales,2019,digital,Epopeya de ciencia ficción con mundos en guerra,false
+9,El eco de la montaña,Isabel Ruiz,1992,physical,Narrativa costumbrista de una familia en los Andes,true
+10,Red digital,Luis Herrera,2023,digital,Cibercrimen y hackers en un futuro cercano,false

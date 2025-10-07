@@ -6,6 +6,7 @@ package com.igu;
 
 import com.logic.Book;
 import com.persistence.Books;
+import com.persistence.BooksLoan;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -18,14 +19,21 @@ public class Home extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Home.class.getName());
     public ArrayList<Book> bibliotec = new ArrayList<Book>();
+    public ArrayList<Book> bibliotecLoan = new ArrayList<Book>();
     public Books bookpersistence = new Books();
+    public BooksLoan bookloanPersistence = new BooksLoan();
+    ArrayList<String> bookhost = new ArrayList<String>();
+    
+    
     /**
      * Creates new form Home
      */
     public Home() {
         initComponents();
+        
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,7 +54,6 @@ public class Home extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         title = new javax.swing.JLabel();
         traspareted_background = new javax.swing.JPanel();
         background_bibliotec = new javax.swing.JLabel();
@@ -101,7 +108,12 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Borrow Book");
+        jButton6.setText("Book loans");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Load File");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -109,8 +121,6 @@ public class Home extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-
-        jButton8.setText("Return Book");
 
         title.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,13 +139,11 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addComponent(title)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
-                .addGap(40, 40, 40)
+                .addGap(117, 117, 117)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
                 .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,26 +152,28 @@ public class Home extends javax.swing.JFrame {
         options_backgroundLayout.setVerticalGroup(
             options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(options_backgroundLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
                 .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(title)
                     .addGroup(options_backgroundLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(options_backgroundLayout.createSequentialGroup()
+                                .addComponent(jButton5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton7))
+                            .addGroup(options_backgroundLayout.createSequentialGroup()
+                                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton1)
+                                    .addComponent(jButton3))
+                                .addGap(18, 18, 18)
+                                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton4)
+                                    .addComponent(jButton2)))))
+                    .addGroup(options_backgroundLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
                         .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
-                            .addComponent(jButton5))
-                        .addGap(18, 18, 18)
-                        .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton8)
-                            .addComponent(jButton7)))
-                    .addGroup(options_backgroundLayout.createSequentialGroup()
-                        .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton3))
-                        .addGap(18, 18, 18)
-                        .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton2))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(title))))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         background.add(options_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1000, 100));
@@ -200,7 +210,21 @@ public class Home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void setListbook(ArrayList books){
+        this.bibliotec = books;
+    }
+    public ArrayList<Book> getListbook(){
+        return bibliotec;
+    }
+    public void setListbookLoan(ArrayList books){
+        this.bibliotecLoan = books;
+    }
+    
+    public ArrayList<Book> getBibliotecLoan() {
+    return bibliotecLoan;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -211,7 +235,7 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-   
+        bibliotecLoan = bookloanPersistence.downloadProductFile();
         bibliotec = bookpersistence.downloadProductFile();
         JOptionPane.showMessageDialog(null, bibliotec.get(1).csvDescriptionProduct());
         
@@ -219,8 +243,23 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        bookpersistence.uploadWriteFile(bibliotec);
+        bookloanPersistence.uploadWriteFile(bibliotecLoan);
 
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        BookLoan pageLoan = new BookLoan(this); 
+        pageLoan.setVisible(true);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(null, bibliotec.get(1).csvDescriptionProduct());
+        pageLoan.setListbook(bibliotec);
+        pageLoan.setListbookLoan(bibliotecLoan);
+        pageLoan.setVisible(true);
+        pageLoan.setLocation(null);
+        
+    }//GEN-LAST:event_jButton6ActionPerformed
 
 
 
@@ -236,7 +275,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JPanel options_background;
     private javax.swing.JLabel title;
     private javax.swing.JPanel traspareted_background;

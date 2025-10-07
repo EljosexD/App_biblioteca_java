@@ -8,17 +8,17 @@ public class PhysicalBook extends Book{
 
     @Override
     public String csvDescriptionProduct() {
-        return (this.id + "," + this.name + "," + this.authorname + "," + year + "," + this.synopsis + "," + this.disposability + "," + this.type);
+        return (this.id + "," + this.name + "," + this.authorname + "," + year + "," + this.type + "," + this.synopsis + "," + this.disposability);
     }
     public void descripcionPrueba() {
         System.out.println(
-                this.id + "," +
+                        this.id + "," +
                         this.name + "," +
                         this.authorname + "," +
                         this.year + "," +
+                        this.type + "," +
                         this.synopsis + "," +
-                        this.disposability + "," +
-                        this.type
+                        this.disposability
         );
     }
 

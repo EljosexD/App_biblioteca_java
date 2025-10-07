@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Books {
-    File fileVariable = new File("database\\basedate.csv");
+    File fileVariable = new File("database\\basedateBook.csv");
     public void CreateFile() {
         try {
             if (this.fileVariable.createNewFile()){
                 FileWriter writer = new FileWriter(fileVariable,true);
-                writer.write("Id,Name,AuthorName,Year,Synopsis,Disposability,Type\n");
+                writer.write("Id,Name,authorname,year,Type,synopsis,disposability\n");
                 writer.close();
                 System.out.println("Create your databases");
             }else {
