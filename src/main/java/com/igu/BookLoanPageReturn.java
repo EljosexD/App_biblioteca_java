@@ -21,7 +21,7 @@ public class BookLoanPageReturn extends javax.swing.JPanel {
     private DefaultTableModel tableColumnModel;
     ArrayList<Book> bookloans = new ArrayList<>();
     ArrayList<Book> bibliotec = new ArrayList<>();
-    private BookLoan parentFrame;
+    private final BookLoan parentFrame;
     
     public BookLoanPageReturn(BookLoan parentFrame) {
         initComponents();
@@ -97,7 +97,7 @@ public class BookLoanPageReturn extends javax.swing.JPanel {
         for (Book book : parentFrame.getListbook()){
             if(idBook == book.getId()){
                 book.setDisposability(true);
-                parentFrame.getBibliotecLoan().remove(book);
+                parentFrame.getBibliotecLoan().removeIf(b -> b.getId() == idBook);
                 tableColumnModel.removeRow(row);
                 JOptionPane.showMessageDialog(null, "se delvovio el libro :D", "Información", JOptionPane.INFORMATION_MESSAGE);
                 break;

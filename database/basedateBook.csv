@@ -6,6 +6,6 @@ Id,Name,authorname,year,Type,synopsis,disposability
 5,Camino a las estrellas,María Fernández,1987,physical,Ciencia ficción clásica de viajes espaciales,true
 6,El guardián del tiempo,Sergio López,2010,digital,Aventura donde un reloj controla el destino,true
 7,Reflejos rotos,Beatriz Sánchez,2005,physical,Drama psicológico ambientado en la ciudad,true
-8,Horizontes de fuego,Pedro Morales,2019,digital,Epopeya de ciencia ficción con mundos en guerra,false
+8,Horizontes de fuego,Pedro Morales,2019,digital,Epopeya de ciencia ficción con mundos en guerra,true
 9,El eco de la montaña,Isabel Ruiz,1992,physical,Narrativa costumbrista de una familia en los Andes,true
-10,Red digital,Luis Herrera,2023,digital,Cibercrimen y hackers en un futuro cercano,false
+10,Red digital,Luis Herrera,2023,digital,Cibercrimen y hackers en un futuro cercano,true
