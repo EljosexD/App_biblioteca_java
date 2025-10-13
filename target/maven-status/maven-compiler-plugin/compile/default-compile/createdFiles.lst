@@ -4,15 +4,21 @@ com\igu\BookLoan$1.class
 com\igu\BookLoanPageLoan$1.class
 com\igu\BookLoanPageReturn.class
 com\logic\Book.class
+com\igu\Bookcontroller.class
+com\igu\BookLoan$6.class
 com\logic\PhysicalBook.class
 com\persistence\Books.class
 com\igu\BookLoan.class
+com\igu\BookLoan$4.class
 com\igu\Home$4.class
 com\logic\DigitalBook.class
 com\igu\BookLoanPageLoan.class
+com\igu\BookLoan$5.class
+com\igu\BookTableModel.class
 com\igu\Home.class
 com\igu\Home$2.class
 com\igu\BookLoan$2.class
+NewJFrame.class
 com\igu\BookLoan$3.class
 com\igu\Home$5.class
 com\persistence\BooksLoan.class
@@ -20,3 +26,4 @@ com\igu\Home$3.class
 com\igu\BookLoanPageLoan$2.class
 com\logic\LoanManager.class
 com\logic\Biblioteca_usc.class
+com\igu\BookLoanPageReturn$2.class
