@@ -15,12 +15,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BookLoanPageReturn extends javax.swing.JPanel {
 
-    /**
-     * Creates new form BookLoanPageReturn
-     */
     private DefaultTableModel tableColumnModel;
-    ArrayList<Book> bookloans = new ArrayList<>();
-    ArrayList<Book> bibliotec = new ArrayList<>();
+    private ArrayList<Book> bookloans = new ArrayList<>();
     private final BookLoan parentFrame;
     
     public BookLoanPageReturn(BookLoan parentFrame) {
@@ -40,16 +36,16 @@ public class BookLoanPageReturn extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Background = new javax.swing.JPanel();
+        JPbackground = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        JPtitle = new javax.swing.JPanel();
+        JLtitle = new javax.swing.JLabel();
+        JLtext_button = new javax.swing.JLabel();
+        JBreturn = new javax.swing.JButton();
 
-        Background.setBackground(new java.awt.Color(0, 0, 0));
-        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPbackground.setBackground(new java.awt.Color(0, 0, 0));
+        JPbackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -70,63 +66,77 @@ public class BookLoanPageReturn extends javax.swing.JPanel {
         };
         jScrollPane1.setViewportView(jTable1);
 
-        Background.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 770, 370));
+        JPbackground.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 810, 390));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        Background.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, 200, 50));
+        JPtitle.setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        JLtitle.setFont(new java.awt.Font("Roboto Light", 2, 36)); // NOI18N
+        JLtitle.setForeground(new java.awt.Color(255, 255, 255));
+        JLtitle.setText("Owl book return");
 
-        jLabel2.setFont(new java.awt.Font("Roboto Black", 2, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Devolucion de libros del buho");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(250, 250, 250))
+        javax.swing.GroupLayout JPtitleLayout = new javax.swing.GroupLayout(JPtitle);
+        JPtitle.setLayout(JPtitleLayout);
+        JPtitleLayout.setHorizontalGroup(
+            JPtitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPtitleLayout.createSequentialGroup()
+                .addContainerGap(287, Short.MAX_VALUE)
+                .addComponent(JLtitle)
+                .addGap(280, 280, 280))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+        JPtitleLayout.setVerticalGroup(
+            JPtitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPtitleLayout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(JLtitle)
                 .addGap(17, 17, 17))
         );
 
-        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 70));
+        JPbackground.add(JPtitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 80));
 
-        jLabel1.setFont(new java.awt.Font("Roboto Black", 2, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("seleciona el libro y dale al buton");
-        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, -1, -1));
+        JLtext_button.setFont(new java.awt.Font("Roboto Condensed Light", 2, 24)); // NOI18N
+        JLtext_button.setForeground(new java.awt.Color(255, 255, 255));
+        JLtext_button.setText("Select the book and press the button");
+        JPbackground.add(JLtext_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
+
+        JBreturn.setBackground(new java.awt.Color(245, 245, 245));
+        JBreturn.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        JBreturn.setText("Return");
+        JBreturn.setBorderPainted(false);
+        JBreturn.setFocusPainted(false);
+        JBreturn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                JBreturnMouseMoved(evt);
+            }
+        });
+        JBreturn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBreturnMouseExited(evt);
+            }
+        });
+        JBreturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBreturnActionPerformed(evt);
+            }
+        });
+        JPbackground.add(JBreturn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 200, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void JBreturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBreturnActionPerformed
         // TODO add your handling code here:
         int row = jTable1.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(null, "selecionaD", "Información", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select the row :3", "warning", JOptionPane.INFORMATION_MESSAGE);
         }
         String StringBook = String.valueOf(tableColumnModel.getValueAt(row, 0));
         int idBook = Integer.parseInt(StringBook);
@@ -135,12 +145,24 @@ public class BookLoanPageReturn extends javax.swing.JPanel {
                 book.setDisposability(true);
                 parentFrame.getBibliotecLoan().removeIf(b -> b.getId() == idBook);
                 tableColumnModel.removeRow(row);
-                JOptionPane.showMessageDialog(null, "se delvovio el libro :D", "Información", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "The book was returned :D", "Success", JOptionPane.INFORMATION_MESSAGE);
                 break;
             }
         }
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_JBreturnActionPerformed
+
+    private void JBreturnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBreturnMouseExited
+        // TODO add your handling code here:
+        JBreturn.setBackground(new java.awt.Color(245, 245, 245)); 
+        JBreturn.setForeground(new java.awt.Color(28, 28, 28)); 
+    }//GEN-LAST:event_JBreturnMouseExited
+
+    private void JBreturnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBreturnMouseMoved
+        // TODO add your handling code here: 
+        JBreturn.setBackground(new java.awt.Color(54, 52, 52));
+        JBreturn.setForeground(new java.awt.Color(245, 245, 245));
+    }//GEN-LAST:event_JBreturnMouseMoved
 
     public void xd(ArrayList books){
         this.bookloans = books;
@@ -174,11 +196,11 @@ public class BookLoanPageReturn extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton JBreturn;
+    private javax.swing.JLabel JLtext_button;
+    private javax.swing.JLabel JLtitle;
+    private javax.swing.JPanel JPbackground;
+    private javax.swing.JPanel JPtitle;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

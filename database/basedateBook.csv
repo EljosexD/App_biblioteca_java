@@ -5,8 +5,97 @@ Id,Name,authorname,year,Type,synopsis,disposability
 4,La melodía perdida,Lucía Gómez,2021,digital,Novela romántica con giros inesperados,true
 5,Camino a las estrellas,María Fernández,1987,physical,Ciencia ficción clásica de viajes espaciales,true
 6,El guardián del tiempo,Sergio López,2010,digital,Aventura donde un reloj controla el destino,true
-7,Reflejos rotos,Beatriz Sánchez,2005,physical,Drama psicológico ambientado en la ciudad,false
+7,Reflejos rotos,Beatriz Sánchez,2005,physical,Drama psicológico ambientado en la ciudad,true
 8,Horizontes de fuego,Pedro Morales,2019,digital,Epopeya de ciencia ficción con mundos en guerra,true
-9,El eco de la montaña,Isabel Ruiz,1992,physical,Narrativa costumbrista de una familia en los Andes,false
-10,Red digital,Luis Herrera,2023,digital,Cibercrimen y hackers en un futuro cercanos ,false
-11,zxc,zxc,zzx,physical,<zx,false
+9,El eco de la montaña,Isabel Ruiz,1992,physical,Narrativa costumbrista de una familia en los Andes,true
+10,Red digital,Luis Herrera,2023,digital,Cibercrimen y hackers en un futuro cercano,false
+11,Los susurros del bosque,Elena Vargas,1995,physical,Un misterio entre árboles antiguos,false
+12,Tiempo de cenizas,Raúl Ortega,2014,digital,Distopía sobre un mundo devastado,true
+13,La luz del ocaso,Claudia Méndez,2008,physical,Historia de amor imposible en tiempos difíciles,true
+14,Conexión Alfa,Tomás Blanco,2020,digital,Una red secreta que conecta conciencias humanas,true
+15,Las crónicas del vacío,Patricia Soto,2002,physical,Exploradores atrapados entre dimensiones,false
+16,El pacto del silencio,Julio Navarro,2011,digital,Suspenso político con secretos familiares,true
+17,Sombras del norte,Andrea Salas,1996,physical,Aventura ártica con tintes sobrenaturales,false
+18,El algoritmo del destino,Manuel Cabrera,2018,digital,Drama sobre decisiones controladas por IA,true
+19,Cielos de cristal,Laura Núñez,2001,physical,Viaje introspectivo a través de recuerdos rotos,true
+20,Sin red,Daniel Rojas,2022,digital,Thriller sobre desconexión tecnológica,false
+21,El último faro,Carolina Muñoz,1999,physical,Relato de soledad en una isla olvidada,true
+22,Bitácora lunar,David Herrera,2017,digital,Diario de astronautas perdidos en la luna,false
+23,El vuelo del cuervo,Silvia Campos,2006,physical,Relato gótico sobre venganza y redención,true
+24,Fragmentos del futuro,Alberto Pineda,2012,digital,Historias cortas de ciencia ficción,true
+25,Los hijos del trueno,Natalia Fuentes,1994,physical,Epopeya mitológica entre dioses y humanos,true
+26,Mente compartida,Óscar Delgado,2016,digital,Conexión mental entre desconocidos,false
+27,El suspiro del océano,Lorena Díaz,2003,physical,Relato poético sobre el amor y el mar,true
+28,Neón en la lluvia,Gabriel León,2021,digital,Noir futurista en una ciudad lluviosa,false
+29,Los relojes de arena,Rosa Varela,2000,physical,Novela sobre el paso del tiempo,true
+30,Sistema Alfa Beta,Federico Luna,2019,digital,Red social que controla la mente humana,true
+31,La casa de los espejos,Marina Castro,1993,physical,Misterio en una mansión encantada,true
+32,Nodos de la memoria,Ignacio Gómez,2018,digital,Un hacker intenta recuperar recuerdos borrados,true
+33,La senda dorada,Pilar Ramos,1990,physical,Fantasía épica sobre un reino perdido,false
+34,Proyecto Aurora,Enrique Salgado,2015,digital,Experimento científico con consecuencias inesperadas,true
+35,El corazón de la tormenta,Lucía Cabrera,2007,physical,Historia de amor y supervivencia,false
+36,Redención binaria,César Domínguez,2022,digital,Ciencia ficción sobre el alma digital,true
+37,El guardián de la sombra,Ángela Torres,2001,physical,Fantasía urbana con guardianes ancestrales,true
+38,Memorias del código,Roberto Peña,2013,digital,Un programador revive sus errores a través del tiempo,false
+39,Los siete círculos,Patricia Lozano,1997,physical,Relato de aventuras con tintes teológicos,true
+40,Eco virtual,Esteban Rivas,2020,digital,Un universo simulado se rebela contra su creador,true
+41,El susurro del fuego,Andrea Ponce,1992,physical,Drama histórico entre guerras,false
+42,Sector 9,Daniela Flores,2018,digital,Operación encubierta en un futuro posthumano,true
+43,El jardín de cenizas,Raquel Blanco,2005,physical,Una historia de pérdida y redención,true
+44,Red infinita,Camilo Reyes,2021,digital,Un hacker descubre el fin del Internet,true
+45,Los hijos del invierno,Marcos Ortega,1996,physical,Tragedia familiar en un pueblo nevado,true
+46,Mundos paralelos,Laura Vega,2017,digital,Realidades alternas entrelazadas por el destino,false
+47,El canto del silencio,Lucía Benítez,2000,physical,Drama musical sobre la pérdida de la voz,true
+48,Humanidad 2.0,David Pardo,2024,digital,La humanidad se fusiona con la IA,true
+49,El reloj sin tiempo,Julia Morales,1991,physical,Misterio filosófico sobre el destino,true
+50,Vector Omega,Ricardo Campos,2016,digital,Agentes secretos entre corporaciones tecnológicas,false
+51,Los vientos del olvido,Ana Cabrera,1998,physical,Historia romántica en una isla lejana,true
+52,Red fantasma,Carlos Herrera,2015,digital,Un virus informático con conciencia propia,false
+53,Sombras del ayer,Marta Gutiérrez,2002,physical,Relato sobre segundas oportunidades,true
+54,La última señal,Tomás García,2020,digital,Misterio espacial en la frontera del universo,true
+55,Leyendas de fuego,José Ramírez,1995,physical,Historias míticas del sur profundo,false
+56,Identidad beta,Sofía Torres,2019,digital,Thriller psicológico en realidad aumentada,true
+57,El eco del bosque,Andrés López,2004,physical,Misterio rural entre generaciones,true
+58,Origen digital,Valeria Gómez,2018,digital,Una inteligencia artificial busca su creador,false
+59,La ruta del trueno,Claudio Pérez,1999,physical,Aventura sobre exploradores en selvas olvidadas,true
+60,Firewall,Paula Suárez,2017,digital,Una analista enfrenta ataques cibernéticos globales,true
+61,Los ojos del abismo,Pedro Rojas,2003,physical,Suspenso psicológico bajo el mar,false
+62,Conexión final,Laura Herrera,2022,digital,Última comunicación entre mundos virtuales,true
+63,El mapa de los sueños,Cristina Rivera,2000,physical,Relato fantástico con tintes oníricos,true
+64,Error 404,Manuel Ramírez,2021,digital,Misterio de desapariciones en línea,true
+65,La promesa eterna,Natalia Vargas,1997,physical,Romance inmortal a través de los siglos,false
+66,Data viva,Fernando Soto,2016,digital,Datos que cobran vida y amenazan al mundo,false
+67,El reflejo de la luna,Isabela Pineda,1994,physical,Poético drama de reencuentros y pérdidas,true
+68,Superficie cero,Óscar Ruiz,2019,digital,Una nave perdida en el espacio profundo,true
+69,El jardín secreto,Carolina León,1993,physical,Misterio de herencias familiares,false
+70,Archivo X-7,Ignacio Díaz,2020,digital,Investigación de conspiraciones globales,true
+71,El puente invisible,Verónica Blanco,1996,physical,Drama romántico entre mundos paralelos,true
+72,Red alfa beta,Miguel Vargas,2018,digital,Sistema global que predice el comportamiento humano,true
+73,La dama del lago,Sandra Pérez,1991,physical,Reimaginación de una leyenda artúrica,false
+74,Neural Link,Antonio Herrera,2024,digital,Conexión mental global entre humanos,true
+75,El reloj del destino,Silvia Torres,2002,physical,Relato de viajes en el tiempo,true
+76,Datos perdidos,Andrés Cabrera,2019,digital,Un periodista busca la verdad detrás de un apagón digital,false
+77,Los pilares del eco,Julia Ramírez,1998,physical,Intriga arqueológica en templos antiguos,true
+78,Realidad simulada,Lucía Fernández,2022,digital,Una simulación se sale de control,true
+79,El bosque prohibido,Camilo López,1995,physical,Misterio y aventura en un bosque encantado,true
+80,Sistema oscuro,Daniel Navarro,2017,digital,Corporaciones luchan por el control de la información,false
+81,Las arenas del tiempo,Patricia Salgado,2004,physical,Exploradores atrapados en el desierto del tiempo,true
+82,Transferencia,Roberto Gutiérrez,2019,digital,Almas humanas migran a cuerpos sintéticos,true
+83,La sombra del faro,Alejandra Rojas,1990,physical,Romance y soledad junto al mar,true
+84,Servidor caído,Esteban Torres,2023,digital,Distopía donde el Internet desaparece,false
+85,Los días del trueno,Juan Vega,1997,physical,Epopeya bélica con tintes poéticos,false
+86,Algoritmo alfa,María Campos,2020,digital,El futuro de la humanidad en manos de un programa,true
+87,El rostro del pasado,Ricardo Salas,2003,physical,Misterio detectivesco entre ruinas antiguas,true
+88,Consciencia digital,Paula Ramírez,2018,digital,Una IA lucha por su libre albedrío,true
+89,El valle de las sombras,Daniel Pérez,1999,physical,Aventura épica sobre reinos olvidados,true
+90,Terminal 9,Ana Gutiérrez,2019,digital,Intriga futurista en un aeropuerto orbital,false
+91,El pacto del bosque,Tomás Fernández,1992,physical,Relato fantástico sobre pactos antiguos,true
+92,Mente artificial,Laura Navarro,2021,digital,Una científica crea una conciencia sintética,true
+93,El río del olvido,Sandra Morales,1990,physical,Tragedia y redención en un pequeño pueblo,false
+94,Bit rot,Gonzalo Vega,2023,digital,Misterio cibernético sobre pérdida de datos,true
+95,El legado perdido,Carla Torres,1998,physical,Aventura histórica entre ruinas ancestrales,false
+96,Código rojo,Javier Herrera,2017,digital,Thriller tecnológico de espionaje y traición,false
+97,La torre de cristal,Andrea Pérez,2001,physical,Fantasía épica sobre ambición y poder,true
+98,XD,lunera,2025,physical,xdddd,true
+99,Los ecos del silencio,Lucía Vega,1996,physical,Poética reflexión sobre la memoria,true
+100,Red final,Carlos García,2024,digital,El último servidor del mundo guarda un secreto,false

@@ -1,0 +1,25 @@
+--no-fonts
+-classpath
+'C:/Users/eljot/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE270/AbsoluteLayout-RELEASE270.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+23
+-sourcepath
+'C:/Users/eljot/Documents/NetBeansProjects/Biblioteca_usc/src/main/java;C:/Users/eljot/Documents/NetBeansProjects/Biblioteca_usc/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/eljot/Documents/NetBeansProjects/Biblioteca_usc/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'Biblioteca_usc 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'Biblioteca_usc 1.0-SNAPSHOT API'

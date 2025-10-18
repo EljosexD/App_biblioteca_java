@@ -5,13 +5,9 @@
 package com.igu;
 
 import com.logic.Book;
-import com.persistence.Books;
-
-import javax.swing.table.DefaultTableColumnModel;
 import java.awt.*;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import org.w3c.dom.css.RGBColor;
+
 
 /**
  *
@@ -19,16 +15,8 @@ import org.w3c.dom.css.RGBColor;
  */
 public class BookLoan extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(BookLoan.class.getName());
-
-    /**
-     * Creates new form BookLoan
-     */
-    Books listBooks = new Books();
-    ArrayList<String> bookloans = new ArrayList<>();
-    ArrayList<String> bookhost = new ArrayList<>();
-    ArrayList<Book> bibliotec = new ArrayList<>();
-    ArrayList<Book> bibliotecLoan = new ArrayList<>();
+    private ArrayList<Book> bibliotec = new ArrayList<>();
+    private ArrayList<Book> bibliotecLoan = new ArrayList<>();
     private final Home parentHome;
     
     
@@ -51,185 +39,188 @@ public class BookLoan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        IconBuho = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        IconBuhoP1 = new javax.swing.JPanel();
-        IconBuhoP2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        JPbackground = new javax.swing.JPanel();
+        JLmenu = new javax.swing.JPanel();
+        JLiconBuho = new javax.swing.JLabel();
+        JPoptions = new javax.swing.JPanel();
+        JPoptions_books = new javax.swing.JPanel();
+        JLloans = new javax.swing.JLabel();
+        JLreturn_book = new javax.swing.JLabel();
+        JLreturn = new javax.swing.JLabel();
+        JPicon = new javax.swing.JPanel();
+        JLicon_buho = new javax.swing.JLabel();
+        JLtitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPbackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        JLmenu.setBackground(new java.awt.Color(51, 51, 51));
 
-        IconBuho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png"))); // NOI18N
+        JLiconBuho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png"))); // NOI18N
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel3.setForeground(new java.awt.Color(102, 102, 102));
+        JPoptions.setBackground(new java.awt.Color(51, 51, 51));
+        JPoptions.setForeground(new java.awt.Color(102, 102, 102));
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        JPoptions_books.setBackground(new java.awt.Color(102, 102, 102));
 
-        jLabel2.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("jLabel2");
-        jLabel2.setOpaque(true);
-        jLabel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        JLloans.setBackground(new java.awt.Color(51, 51, 51));
+        JLloans.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        JLloans.setForeground(new java.awt.Color(255, 255, 255));
+        JLloans.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLloans.setText("Book loans");
+        JLloans.setOpaque(true);
+        JLloans.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel2MouseMoved(evt);
+                JLloansMouseMoved(evt);
             }
         });
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        JLloans.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                JLloansMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel2MouseExited(evt);
+                JLloansMouseExited(evt);
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("jLabel3");
-        jLabel3.setOpaque(true);
-        jLabel3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        JLreturn_book.setBackground(new java.awt.Color(51, 51, 51));
+        JLreturn_book.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        JLreturn_book.setForeground(new java.awt.Color(255, 255, 255));
+        JLreturn_book.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLreturn_book.setText("Return of books");
+        JLreturn_book.setOpaque(true);
+        JLreturn_book.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel3MouseMoved(evt);
+                JLreturn_bookMouseMoved(evt);
             }
         });
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        JLreturn_book.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                JLreturn_bookMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel3MouseExited(evt);
+                JLreturn_bookMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+        javax.swing.GroupLayout JPoptions_booksLayout = new javax.swing.GroupLayout(JPoptions_books);
+        JPoptions_books.setLayout(JPoptions_booksLayout);
+        JPoptions_booksLayout.setHorizontalGroup(
+            JPoptions_booksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JLloans, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(JLreturn_book, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+        JPoptions_booksLayout.setVerticalGroup(
+            JPoptions_booksLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPoptions_booksLayout.createSequentialGroup()
+                .addComponent(JLloans, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(JLreturn_book, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel4.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("jLabel4");
-        jLabel4.setOpaque(true);
-        jLabel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        JLreturn.setBackground(new java.awt.Color(51, 51, 51));
+        JLreturn.setFont(new java.awt.Font("Roboto Light", 0, 18)); // NOI18N
+        JLreturn.setForeground(new java.awt.Color(255, 255, 255));
+        JLreturn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        JLreturn.setText("Return ");
+        JLreturn.setOpaque(true);
+        JLreturn.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabel4MouseMoved(evt);
+                JLreturnMouseMoved(evt);
             }
         });
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        JLreturn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                JLreturnMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
+                JLreturnMouseExited(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout JPoptionsLayout = new javax.swing.GroupLayout(JPoptions);
+        JPoptions.setLayout(JPoptionsLayout);
+        JPoptionsLayout.setHorizontalGroup(
+            JPoptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPoptionsLayout.createSequentialGroup()
+                .addGroup(JPoptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JLreturn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JPoptions_books, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        JPoptionsLayout.setVerticalGroup(
+            JPoptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPoptionsLayout.createSequentialGroup()
+                .addComponent(JPoptions_books, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(251, 251, 251)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addComponent(JLreturn, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout JLmenuLayout = new javax.swing.GroupLayout(JLmenu);
+        JLmenu.setLayout(JLmenuLayout);
+        JLmenuLayout.setHorizontalGroup(
+            JLmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JPoptions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JLmenuLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(IconBuho)
+                .addComponent(JLiconBuho)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        JLmenuLayout.setVerticalGroup(
+            JLmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JLmenuLayout.createSequentialGroup()
                 .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(IconBuho)
+                .addComponent(JLiconBuho)
                 .addGap(35, 35, 35)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(JPoptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 600));
+        JPbackground.add(JLmenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 600));
 
-        IconBuhoP1.setBackground(new java.awt.Color(0, 0, 0));
+        JPicon.setBackground(new java.awt.Color(0, 0, 0));
 
-        IconBuhoP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png"))); // NOI18N
+        JLicon_buho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Biblioteca del buho");
+        JLtitle.setFont(new java.awt.Font("Roboto Black", 0, 36)); // NOI18N
+        JLtitle.setForeground(new java.awt.Color(255, 255, 255));
+        JLtitle.setText("Owl Library");
 
-        javax.swing.GroupLayout IconBuhoP1Layout = new javax.swing.GroupLayout(IconBuhoP1);
-        IconBuhoP1.setLayout(IconBuhoP1Layout);
-        IconBuhoP1Layout.setHorizontalGroup(
-            IconBuhoP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IconBuhoP1Layout.createSequentialGroup()
-                .addContainerGap(258, Short.MAX_VALUE)
-                .addGroup(IconBuhoP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IconBuhoP1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(241, 241, 241))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, IconBuhoP1Layout.createSequentialGroup()
-                        .addComponent(IconBuhoP2)
-                        .addGap(336, 336, 336))))
+        javax.swing.GroupLayout JPiconLayout = new javax.swing.GroupLayout(JPicon);
+        JPicon.setLayout(JPiconLayout);
+        JPiconLayout.setHorizontalGroup(
+            JPiconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPiconLayout.createSequentialGroup()
+                .addContainerGap(322, Short.MAX_VALUE)
+                .addGroup(JPiconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPiconLayout.createSequentialGroup()
+                        .addComponent(JLtitle)
+                        .addGap(302, 302, 302))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPiconLayout.createSequentialGroup()
+                        .addComponent(JLicon_buho)
+                        .addGap(333, 333, 333))))
         );
-        IconBuhoP1Layout.setVerticalGroup(
-            IconBuhoP1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(IconBuhoP1Layout.createSequentialGroup()
-                .addGap(201, 201, 201)
-                .addComponent(IconBuhoP2)
+        JPiconLayout.setVerticalGroup(
+            JPiconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPiconLayout.createSequentialGroup()
+                .addGap(204, 204, 204)
+                .addComponent(JLicon_buho)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addComponent(JLtitle)
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
-        background.add(IconBuhoP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 810, 600));
+        JPbackground.add(JPicon, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 810, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -248,46 +239,38 @@ public class BookLoan extends javax.swing.JFrame {
     return bibliotecLoan;
 }
  
-    private void jPanel3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel3MouseMoved
 
-    private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseExited
+    private void JLloansMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLloansMouseMoved
         // TODO add your handling code here:
-  
-    }//GEN-LAST:event_jPanel3MouseExited
+        JLloans.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_JLloansMouseMoved
 
-    private void jLabel2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseMoved
+    private void JLloansMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLloansMouseExited
         // TODO add your handling code here:
-        jLabel2.setBackground(new java.awt.Color(0,0,0));
-    }//GEN-LAST:event_jLabel2MouseMoved
+        JLloans.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JLloansMouseExited
 
-    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+    private void JLreturn_bookMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLreturn_bookMouseMoved
         // TODO add your handling code here:
-        jLabel2.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_jLabel2MouseExited
+        JLreturn_book.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_JLreturn_bookMouseMoved
 
-    private void jLabel3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseMoved
+    private void JLreturn_bookMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLreturn_bookMouseExited
         // TODO add your handling code here:
-        jLabel3.setBackground(new java.awt.Color(0,0,0));
-    }//GEN-LAST:event_jLabel3MouseMoved
+        JLreturn_book.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JLreturn_bookMouseExited
 
-    private void jLabel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseExited
+    private void JLreturnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLreturnMouseExited
         // TODO add your handling code here:
-        jLabel3.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_jLabel3MouseExited
+         JLreturn.setBackground(new java.awt.Color(51,51,51));
+    }//GEN-LAST:event_JLreturnMouseExited
 
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
+    private void JLreturnMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLreturnMouseMoved
         // TODO add your handling code here:
-         jLabel4.setBackground(new java.awt.Color(51,51,51));
-    }//GEN-LAST:event_jLabel4MouseExited
+        JLreturn.setBackground(new java.awt.Color(0,0,0));
+    }//GEN-LAST:event_JLreturnMouseMoved
 
-    private void jLabel4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseMoved
-        // TODO add your handling code here:
-        jLabel4.setBackground(new java.awt.Color(0,0,0));
-    }//GEN-LAST:event_jLabel4MouseMoved
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void JLloansMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLloansMouseClicked
         // TODO add your handling code here:
         BookLoanPageLoan page1 = new BookLoanPageLoan(this);
         page1.setListbook(bibliotec);
@@ -295,51 +278,47 @@ public class BookLoan extends javax.swing.JFrame {
         page1.setSize(810,600);
         page1.setLocation(0,0);
 
-        IconBuhoP1.removeAll();
-        IconBuhoP1.add(page1, BorderLayout.CENTER);
-        IconBuhoP1.revalidate();
-        IconBuhoP1.repaint();
-    }//GEN-LAST:event_jLabel2MouseClicked
+        JPicon.removeAll();
+        JPicon.add(page1, BorderLayout.CENTER);
+        JPicon.revalidate();
+        JPicon.repaint();
+    }//GEN-LAST:event_JLloansMouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void JLreturn_bookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLreturn_bookMouseClicked
         // TODO add your handling code here:
         BookLoanPageReturn page2 = new BookLoanPageReturn(this);
         page2.xd(bibliotecLoan);
         page2.setSize(810,600);
         page2.setLocation(0,0);
 
-        IconBuhoP1.removeAll();
-        IconBuhoP1.add(page2, BorderLayout.CENTER);
-        IconBuhoP1.revalidate();
-        IconBuhoP1.repaint();
-    }//GEN-LAST:event_jLabel3MouseClicked
+        JPicon.removeAll();
+        JPicon.add(page2, BorderLayout.CENTER);
+        JPicon.revalidate();
+        JPicon.repaint();
+    }//GEN-LAST:event_JLreturn_bookMouseClicked
 
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+    private void JLreturnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JLreturnMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
         parentHome.setVisible(true);
         parentHome.setListbook(bibliotec);
         parentHome.setListbookLoan(bibliotecLoan);
-    }//GEN-LAST:event_jLabel4MouseClicked
+    }//GEN-LAST:event_JLreturnMouseClicked
 
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IconBuho;
-    private javax.swing.JPanel IconBuhoP1;
-    private javax.swing.JLabel IconBuhoP2;
-    private javax.swing.JButton JBloan1;
-    private javax.swing.JButton JBloan2;
-    private javax.swing.JPanel background;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel JLiconBuho;
+    private javax.swing.JLabel JLicon_buho;
+    private javax.swing.JLabel JLloans;
+    private javax.swing.JPanel JLmenu;
+    private javax.swing.JLabel JLreturn;
+    private javax.swing.JLabel JLreturn_book;
+    private javax.swing.JLabel JLtitle;
+    private javax.swing.JPanel JPbackground;
+    private javax.swing.JPanel JPicon;
+    private javax.swing.JPanel JPoptions;
+    private javax.swing.JPanel JPoptions_books;
     // End of variables declaration//GEN-END:variables
 }

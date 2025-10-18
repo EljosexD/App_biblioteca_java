@@ -7,9 +7,8 @@ package com.igu;
 import com.logic.Book;
 import com.persistence.Books;
 import com.persistence.BooksLoan;
-
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -17,12 +16,11 @@ import javax.swing.JOptionPane;
  */
 public class Home extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Home.class.getName());
-    public ArrayList<Book> bibliotec = new ArrayList<Book>();
-    public ArrayList<Book> bibliotecLoan = new ArrayList<Book>();
-    public Books bookpersistence = new Books();
-    public BooksLoan bookloanPersistence = new BooksLoan();
-    ArrayList<String> bookhost = new ArrayList<String>();
+    protected ArrayList<Book> bibliotec = new ArrayList<>();
+    protected ArrayList<Book> bibliotecLoan = new ArrayList<>();
+    protected Books bookpersistence = new Books();
+    protected BooksLoan bookloanPersistence = new BooksLoan();
+
     
     
     /**
@@ -30,9 +28,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
-        
     }
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,140 +39,191 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
-        Buho = new javax.swing.JLabel();
-        buho_background = new javax.swing.JPanel();
-        options_background = new javax.swing.JPanel();
-        editar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        title = new javax.swing.JLabel();
-        traspareted_background = new javax.swing.JPanel();
-        background_bibliotec = new javax.swing.JLabel();
+        JPbackground = new javax.swing.JPanel();
+        JLbuho = new javax.swing.JLabel();
+        JPbuho_background = new javax.swing.JPanel();
+        JPoptions_background = new javax.swing.JPanel();
+        JBcrud = new javax.swing.JButton();
+        JBsave = new javax.swing.JButton();
+        JBloans = new javax.swing.JButton();
+        JBload = new javax.swing.JButton();
+        JLtitle = new javax.swing.JLabel();
+        JPtraspareted_background = new javax.swing.JPanel();
+        JLbackground_bibliotec = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        background.setBackground(new java.awt.Color(204, 255, 255));
-        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        JPbackground.setBackground(new java.awt.Color(204, 255, 255));
+        JPbackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Buho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png"))); // NOI18N
-        background.add(Buho, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
+        JLbuho.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png"))); // NOI18N
+        JPbackground.add(JLbuho, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 20, -1, -1));
 
-        buho_background.setBackground(new java.awt.Color(51, 51, 51));
+        JPbuho_background.setBackground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout buho_backgroundLayout = new javax.swing.GroupLayout(buho_background);
-        buho_background.setLayout(buho_backgroundLayout);
-        buho_backgroundLayout.setHorizontalGroup(
-            buho_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JPbuho_backgroundLayout = new javax.swing.GroupLayout(JPbuho_background);
+        JPbuho_background.setLayout(JPbuho_backgroundLayout);
+        JPbuho_backgroundLayout.setHorizontalGroup(
+            JPbuho_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1000, Short.MAX_VALUE)
         );
-        buho_backgroundLayout.setVerticalGroup(
-            buho_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JPbuho_backgroundLayout.setVerticalGroup(
+            JPbuho_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 80, Short.MAX_VALUE)
         );
 
-        background.add(buho_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 80));
+        JPbackground.add(JPbuho_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 80));
 
-        options_background.setBackground(new java.awt.Color(51, 51, 51));
+        JPoptions_background.setBackground(new java.awt.Color(0, 0, 0));
 
-        editar.setText("editar");
-        editar.addActionListener(new java.awt.event.ActionListener() {
+        JBcrud.setBackground(new java.awt.Color(245, 245, 245));
+        JBcrud.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        JBcrud.setText("Modify and add books");
+        JBcrud.setBorderPainted(false);
+        JBcrud.setFocusPainted(false);
+        JBcrud.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                JBcrudMouseMoved(evt);
+            }
+        });
+        JBcrud.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBcrudMouseExited(evt);
+            }
+        });
+        JBcrud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarActionPerformed(evt);
+                JBcrudActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Save File");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        JBsave.setBackground(new java.awt.Color(245, 245, 245));
+        JBsave.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        JBsave.setText("Save File");
+        JBsave.setBorderPainted(false);
+        JBsave.setFocusPainted(false);
+        JBsave.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                JBsaveMouseMoved(evt);
+            }
+        });
+        JBsave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBsaveMouseExited(evt);
+            }
+        });
+        JBsave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                JBsaveActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Book loans");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        JBloans.setBackground(new java.awt.Color(245, 245, 245));
+        JBloans.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        JBloans.setText("Book loans");
+        JBloans.setBorderPainted(false);
+        JBloans.setFocusPainted(false);
+        JBloans.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                JBloansMouseMoved(evt);
+            }
+        });
+        JBloans.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBloansMouseExited(evt);
+            }
+        });
+        JBloans.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                JBloansActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Load File");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        JBload.setBackground(new java.awt.Color(245, 245, 245));
+        JBload.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        JBload.setText("Load File");
+        JBload.setBorderPainted(false);
+        JBload.setFocusPainted(false);
+        JBload.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                JBloadMouseMoved(evt);
+            }
+        });
+        JBload.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                JBloadMouseExited(evt);
+            }
+        });
+        JBload.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                JBloadActionPerformed(evt);
             }
         });
 
-        title.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        title.setForeground(new java.awt.Color(255, 255, 255));
-        title.setText("Biblioteca del Buho");
+        JLtitle.setFont(new java.awt.Font("Roboto Light", 0, 24)); // NOI18N
+        JLtitle.setForeground(new java.awt.Color(255, 255, 255));
+        JLtitle.setText("Owl Library");
 
-        javax.swing.GroupLayout options_backgroundLayout = new javax.swing.GroupLayout(options_background);
-        options_background.setLayout(options_backgroundLayout);
-        options_backgroundLayout.setHorizontalGroup(
-            options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(options_backgroundLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
-                .addComponent(title)
-                .addGap(117, 117, 117)
-                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(46, 46, 46))
+        javax.swing.GroupLayout JPoptions_backgroundLayout = new javax.swing.GroupLayout(JPoptions_background);
+        JPoptions_background.setLayout(JPoptions_backgroundLayout);
+        JPoptions_backgroundLayout.setHorizontalGroup(
+            JPoptions_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPoptions_backgroundLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(JBcrud, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(JBloans, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addComponent(JLtitle)
+                .addGap(50, 50, 50)
+                .addComponent(JBload, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(JBsave, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
-        options_backgroundLayout.setVerticalGroup(
-            options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(options_backgroundLayout.createSequentialGroup()
-                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(options_backgroundLayout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(jButton5)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton7))
-                    .addGroup(options_backgroundLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton6)
-                            .addComponent(title)
-                            .addComponent(editar))))
-                .addContainerGap(19, Short.MAX_VALUE))
+        JPoptions_backgroundLayout.setVerticalGroup(
+            JPoptions_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPoptions_backgroundLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(JPoptions_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JBloans, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JLtitle)
+                    .addComponent(JBcrud, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBload, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBsave, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        background.add(options_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1000, 100));
+        JPbackground.add(JPoptions_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 1000, 100));
 
-        traspareted_background.setBackground(new java.awt.Color(0, 0, 0,180));
-        traspareted_background.setToolTipText("");
+        JPtraspareted_background.setBackground(new java.awt.Color(0, 0, 0,180));
+        JPtraspareted_background.setToolTipText("");
 
-        javax.swing.GroupLayout traspareted_backgroundLayout = new javax.swing.GroupLayout(traspareted_background);
-        traspareted_background.setLayout(traspareted_backgroundLayout);
-        traspareted_backgroundLayout.setHorizontalGroup(
-            traspareted_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout JPtraspareted_backgroundLayout = new javax.swing.GroupLayout(JPtraspareted_background);
+        JPtraspareted_background.setLayout(JPtraspareted_backgroundLayout);
+        JPtraspareted_backgroundLayout.setHorizontalGroup(
+            JPtraspareted_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1000, Short.MAX_VALUE)
         );
-        traspareted_backgroundLayout.setVerticalGroup(
-            traspareted_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        JPtraspareted_backgroundLayout.setVerticalGroup(
+            JPtraspareted_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 420, Short.MAX_VALUE)
         );
 
-        background.add(traspareted_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1000, 420));
+        JPbackground.add(JPtraspareted_background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1000, 420));
 
-        background_bibliotec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background/img-background-bliblioteca5.png"))); // NOI18N
-        background.add(background_bibliotec, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
+        JLbackground_bibliotec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/background/img-background-bliblioteca5.png"))); // NOI18N
+        JPbackground.add(JLbackground_bibliotec, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JPbackground, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -196,56 +243,101 @@ public class Home extends javax.swing.JFrame {
     return bibliotecLoan;
     }
     
-    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+    private void JBcrudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBcrudActionPerformed
        BookCrud crud = new BookCrud(this);
-     
        crud.setVisible(true);
-       crud.setLocation(null);
-       crud.setbooks(bibliotec);
+       crud.setLocationRelativeTo(null);
        this.setVisible(false);
-    }//GEN-LAST:event_editarActionPerformed
+       System.out.println("sdsdsd");
+       crud.setListbook(bibliotec);
+       System.out.println("xd");
+    }//GEN-LAST:event_JBcrudActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+    private void JBloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBloadActionPerformed
         bibliotecLoan = bookloanPersistence.downloadProductFile();
         bibliotec = bookpersistence.downloadProductFile();
-        JOptionPane.showMessageDialog(null, bibliotec.get(1).csvDescriptionProduct());
         
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_JBloadActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void JBsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBsaveActionPerformed
         // TODO add your handling code here:
         bookpersistence.uploadWriteFile(bibliotec);
         bookloanPersistence.uploadWriteFile(bibliotecLoan);
 
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_JBsaveActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void JBloansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBloansActionPerformed
         // TODO add your handling code here:
         BookLoan pageLoan = new BookLoan(this); 
         pageLoan.setVisible(true);
+        pageLoan.setLocationRelativeTo(null);
         this.setVisible(false);
-        JOptionPane.showMessageDialog(null, bibliotec.get(1).csvDescriptionProduct());
         pageLoan.setListbook(bibliotec);
         pageLoan.setListbookLoan(bibliotecLoan);
-        pageLoan.setVisible(true);
-        pageLoan.setLocation(null);
         
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_JBloansActionPerformed
+
+    private void JBloansMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBloansMouseMoved
+        // TODO add your handling code here:
+        JBloans.setBackground(new java.awt.Color(54, 52, 52));
+        JBloans.setForeground(new java.awt.Color(245, 245, 245)); 
+    }//GEN-LAST:event_JBloansMouseMoved
+
+    private void JBloansMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBloansMouseExited
+        // TODO add your handling code here:
+        JBloans.setBackground(new java.awt.Color(245, 245, 245)); 
+        JBloans.setForeground(new java.awt.Color(28, 28, 28));    
+    }//GEN-LAST:event_JBloansMouseExited
+
+    private void JBcrudMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBcrudMouseMoved
+        // TODO add your handling code here:
+        JBcrud.setBackground(new java.awt.Color(54, 52, 52));
+        JBcrud.setForeground(new java.awt.Color(245, 245, 245)); 
+    }//GEN-LAST:event_JBcrudMouseMoved
+
+    private void JBcrudMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBcrudMouseExited
+        // TODO add your handling code here:
+        JBcrud.setBackground(new java.awt.Color(245, 245, 245)); 
+        JBcrud.setForeground(new java.awt.Color(28, 28, 28));  
+    }//GEN-LAST:event_JBcrudMouseExited
+
+    private void JBloadMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBloadMouseExited
+        // TODO add your handling code here:
+        JBload.setBackground(new java.awt.Color(245, 245, 245)); 
+        JBload.setForeground(new java.awt.Color(28, 28, 28));  
+    }//GEN-LAST:event_JBloadMouseExited
+
+    private void JBloadMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBloadMouseMoved
+        // TODO add your handling code here:
+        JBload.setBackground(new java.awt.Color(54, 52, 52));
+        JBload.setForeground(new java.awt.Color(245, 245, 245)); 
+    }//GEN-LAST:event_JBloadMouseMoved
+
+    private void JBsaveMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBsaveMouseMoved
+        // TODO add your handling code here:
+        JBsave.setBackground(new java.awt.Color(54, 52, 52));
+        JBsave.setForeground(new java.awt.Color(245, 245, 245)); 
+    }//GEN-LAST:event_JBsaveMouseMoved
+
+    private void JBsaveMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JBsaveMouseExited
+        // TODO add your handling code here:
+        JBsave.setBackground(new java.awt.Color(245, 245, 245)); 
+        JBsave.setForeground(new java.awt.Color(28, 28, 28));  
+    }//GEN-LAST:event_JBsaveMouseExited
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Buho;
-    private javax.swing.JPanel background;
-    private javax.swing.JLabel background_bibliotec;
-    private javax.swing.JPanel buho_background;
-    private javax.swing.JButton editar;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JPanel options_background;
-    private javax.swing.JLabel title;
-    private javax.swing.JPanel traspareted_background;
+    private javax.swing.JButton JBcrud;
+    private javax.swing.JButton JBload;
+    private javax.swing.JButton JBloans;
+    private javax.swing.JButton JBsave;
+    private javax.swing.JLabel JLbackground_bibliotec;
+    private javax.swing.JLabel JLbuho;
+    private javax.swing.JLabel JLtitle;
+    private javax.swing.JPanel JPbackground;
+    private javax.swing.JPanel JPbuho_background;
+    private javax.swing.JPanel JPoptions_background;
+    private javax.swing.JPanel JPtraspareted_background;
     // End of variables declaration//GEN-END:variables
 }
