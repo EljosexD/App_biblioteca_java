@@ -47,10 +47,7 @@ public class Home extends javax.swing.JFrame {
         Buho = new javax.swing.JLabel();
         buho_background = new javax.swing.JPanel();
         options_background = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        editar = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -83,23 +80,12 @@ public class Home extends javax.swing.JFrame {
 
         options_background.setBackground(new java.awt.Color(51, 51, 51));
 
-        jButton1.setText("Add book");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        editar.setText("editar");
+        editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                editarActionPerformed(evt);
             }
         });
-
-        jButton2.setText("Delete Book");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Search Book");
-
-        jButton4.setText("List Books");
 
         jButton5.setText("Save File");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -131,15 +117,9 @@ public class Home extends javax.swing.JFrame {
         options_backgroundLayout.setHorizontalGroup(
             options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(options_backgroundLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
+                .addComponent(editar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
                 .addComponent(title)
                 .addGap(117, 117, 117)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,24 +135,15 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(options_backgroundLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(options_backgroundLayout.createSequentialGroup()
-                                .addComponent(jButton5)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton7))
-                            .addGroup(options_backgroundLayout.createSequentialGroup()
-                                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton3))
-                                .addGap(18, 18, 18)
-                                .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton4)
-                                    .addComponent(jButton2)))))
+                        .addComponent(jButton5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton7))
                     .addGroup(options_backgroundLayout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(options_backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
-                            .addComponent(title))))
+                            .addComponent(title)
+                            .addComponent(editar))))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -225,16 +196,14 @@ public class Home extends javax.swing.JFrame {
     return bibliotecLoan;
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       ControlsInterface crud = new ControlsInterface(this);
+    private void editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarActionPerformed
+       BookCrud crud = new BookCrud(this);
+     
        crud.setVisible(true);
+       crud.setLocation(null);
+       crud.setbooks(bibliotec);
        this.setVisible(false);
-
-        crud.setBooks(bibliotec);    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_editarActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -271,10 +240,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel background;
     private javax.swing.JLabel background_bibliotec;
     private javax.swing.JPanel buho_background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton editar;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

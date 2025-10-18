@@ -8,7 +8,7 @@ import com.logic.Bookcontroller;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 import java.awt.*;
-// no explicit ActionEvent import needed
+
 import java.util.ArrayList;
 
 /**
