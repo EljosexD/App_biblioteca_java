@@ -7,6 +7,7 @@ package com.igu;
 import com.logic.Book;
 import java.awt.*;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -23,6 +24,7 @@ public class BookLoan extends javax.swing.JFrame {
 
     public BookLoan(Home parentHome) {
         initComponents();   
+        setIconImage(new ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png")).getImage());
         this.parentHome = parentHome;
         this.bibliotec = parentHome.bibliotec;
         this.bibliotecLoan = parentHome.bibliotecLoan;
@@ -52,6 +54,8 @@ public class BookLoan extends javax.swing.JFrame {
         JLtitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Books");
+        setResizable(false);
 
         JPbackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

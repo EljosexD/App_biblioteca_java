@@ -23,6 +23,7 @@ public class BookCrud extends javax.swing.JFrame {
     
     public BookCrud(Home parentHome) {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png")).getImage());
         this.parentHome = parentHome;
         this.bibliotec = parentHome.bibliotec;
         mostTable();
@@ -44,6 +45,8 @@ public class BookCrud extends javax.swing.JFrame {
         JLbuho_icon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Modify and add books");
+        setResizable(false);
 
         JPBackground.setBackground(new java.awt.Color(102, 102, 102));
         JPBackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

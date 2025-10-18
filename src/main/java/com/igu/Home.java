@@ -8,6 +8,8 @@ import com.logic.Book;
 import com.persistence.Books;
 import com.persistence.BooksLoan;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -28,6 +30,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("/img/icons/Buho-creado-luna.png")).getImage());
     }
     
     /**
@@ -52,6 +55,8 @@ public class Home extends javax.swing.JFrame {
         JLbackground_bibliotec = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Home");
+        setResizable(false);
 
         JPbackground.setBackground(new java.awt.Color(204, 255, 255));
         JPbackground.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -256,14 +261,14 @@ public class Home extends javax.swing.JFrame {
     private void JBloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBloadActionPerformed
         bibliotecLoan = bookloanPersistence.downloadProductFile();
         bibliotec = bookpersistence.downloadProductFile();
-        
+        JOptionPane.showMessageDialog(null,"The book list has been loaded successfully.","Library System",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_JBloadActionPerformed
 
     private void JBsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBsaveActionPerformed
         // TODO add your handling code here:
         bookpersistence.uploadWriteFile(bibliotec);
         bookloanPersistence.uploadWriteFile(bibliotecLoan);
-
+        JOptionPane.showMessageDialog(null,"The book list has been saved successfully.","Library System",JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_JBsaveActionPerformed
 
     private void JBloansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBloansActionPerformed
