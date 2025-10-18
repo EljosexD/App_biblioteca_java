@@ -7,20 +7,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 
 /**
- * Controller responsable de la gestión en memoria de la colección de libros.
- * Provee métodos para añadir, listar, buscar, actualizar, borrar y persistir
- * la colección usando la clase {@link Books}.
- *
- * Diseño pensado para ser sencillo y reutilizable por la UI (por ejemplo, por
- * un `JTable` / `TableModel`).
+ * Simple controller to manage a list of Book in memory and persist via Books.
  */
 public class Bookcontroller {
-
-	private final List<Book> books;
 	private final Books persistence;
+	private final ArrayList<Book> books;
 
 	public Bookcontroller() {
 		this(new Books());
@@ -31,49 +24,26 @@ public class Bookcontroller {
 		this.books = new ArrayList<>();
 	}
 
-	/**
-	 * Devuelve una copia inmutable de la lista de libros (para evitar modificaciones externas).
-	 */
 	public synchronized List<Book> list() {
 		return Collections.unmodifiableList(new ArrayList<>(books));
 	}
 
-	/**
-	 * Añade un libro a la colección. Si el id es 0 o negativo se le asigna
-	 * automáticamente un id único incremental.
-	 * @return el libro añadido (misma instancia pasada como parámetro)
-	 */
-	public synchronized Book add(Book book) {
-		if (book == null) throw new IllegalArgumentException("book == null");
-		if (book.getId() <= 0) {
-			book.setId(nextId());
-		} else {
-			// asegurar que no haya conflicto de id
-			if (findById(book.getId()).isPresent()) {
-				book.setId(nextId());
-			}
-		}
-		books.add(book);
-		return book;
+	public synchronized Book add(Book b) {
+		if (b == null) throw new IllegalArgumentException("book == null");
+		if (b.getId() <= 0) b.setId(nextId());
+		else if (findById(b.getId()) != null) b.setId(nextId());
+		books.add(b);
+		return b;
 	}
 
-	/**
-	 * Elimina un libro por su id.
-	 * @return true si se eliminó algún libro
-	 */
 	public synchronized boolean removeById(int id) {
-		Optional<Book> found = findById(id);
-		if (found.isPresent()) {
-			return books.remove(found.get());
-		}
+		Book found = findById(id);
+		if (found != null) return books.remove(found);
 		return false;
 	}
 
-	/**
-	 * Actualiza un libro existente (se busca por id). Retorna true si la actualización tuvo éxito.
-	 */
 	public synchronized boolean update(Book updated) {
-		if (updated == null) throw new IllegalArgumentException("updated == null");
+		if (updated == null) return false;
 		for (int i = 0; i < books.size(); i++) {
 			if (books.get(i).getId() == updated.getId()) {
 				books.set(i, updated);
@@ -83,51 +53,25 @@ public class Bookcontroller {
 		return false;
 	}
 
-	/**
-	 * Busca un libro por id.
-	 */
-	public synchronized Optional<Book> findById(int id) {
-		return books.stream().filter(b -> b.getId() == id).findFirst();
+	public synchronized Book findById(int id) {
+		for (Book b : books) if (b != null && b.getId() == id) return b;
+		return null;
 	}
 
-	/**
-	 * Busca libros cuyo nombre contenga el texto (case-insensitive).
-	 */
-	public synchronized List<Book> findByName(String text) {
-		if (text == null || text.isEmpty()) return new ArrayList<>();
-		String lower = text.toLowerCase();
-		List<Book> out = new ArrayList<>();
-		for (Book b : books) {
-			if (b.getName() != null && b.getName().toLowerCase().contains(lower)) {
-				out.add(b);
-			}
-		}
-		return out;
-	}
-
-	/**
-	 * Carga la lista desde la persistencia (archivo CSV) y la reemplaza en memoria.
-	 * @return la lista cargada
-	 */
-	public synchronized List<Book> load() {
-		List<Book> loaded = persistence.downloadProductFile();
+	public synchronized void load() {
+		ArrayList<Book> loaded = persistence.downloadProductFile();
 		books.clear();
 		if (loaded != null) books.addAll(loaded);
-		// ordenar por id para consistencia visual
 		books.sort(Comparator.comparingInt(Book::getId));
-		return list();
 	}
 
-	/**
-	 * Persiste la lista actual en memoria usando la clase {@link Books}.
-	 */
 	public synchronized void save() {
-		// Books.uploadWriteFile espera un ArrayList<Book>
 		persistence.uploadWriteFile(new ArrayList<>(books));
 	}
 
 	private int nextId() {
-		return books.stream().mapToInt(Book::getId).max().orElse(0) + 1;
+		int max = 0;
+		for (Book b : books) if (b != null && b.getId() > max) max = b.getId();
+		return max + 1;
 	}
-
 }
